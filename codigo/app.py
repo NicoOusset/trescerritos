@@ -14,7 +14,6 @@ db = pymysql.connect(host='localhost',
 
 #------------------------  CLIENTES --------------------------
 
-#Id	Nombre	Apellido	Direccion	Telefono	Correo	Cuit	Referente	Razon_social	Habilitacion_senasa
 @app.route('/crearCliente', methods=['POST'])
 def crearCliente():
 
@@ -207,7 +206,6 @@ def eliminarCliente():
 
 #------------------------  BROKERS --------------------------
 
-#Id	Nombre	Apellido	Direccion	Telefono	Correo	Certificado_habilitacion	Cuit
 @app.route('/crearBroker', methods=['POST'])
 def crearBroker():
 
@@ -395,7 +393,6 @@ def eliminarBroker():
   
 #------------------------  CAMION --------------------------
 
-#Id	Chofer	DNI	Telefono	Direccion	Marca	Patente_chasis	Patente_semi_acoplado	Detalle_camion
 @app.route('/crearCamion', methods=['POST'])
 def crearCamion():
 
@@ -640,6 +637,39 @@ def cargarCompraImportaciones():
     return jsonify({'result':'success', 'mensaje':"Compra Importacion cargada correctamente"})
 
 
+@app.route('/listarComprasImportaciones', methods=['GET'])
+def listarComprasImportaciones():
+   
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM importaciones_compra FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM importaciones_compra ORDER BY Id DESC ")
+        cursor.execute(sql)
+        comprasImportacionesBusqueda = cursor.fetchall()
+        cursor.close()
+
+        cantidadComprasImportaciones=0
+        ComprasImportaciones=[]
+        for i in comprasImportacionesBusqueda:
+            elemento = {}
+            for index in range(len(columnasItem)):
+                elemento[columnasItem[index]] = i[index]
+            ComprasImportaciones.append(elemento)      
+            cantidadComprasImportaciones=cantidadComprasImportaciones+1         
+           
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Compras Importaciones: '+str(e)})
+
+    return jsonify({'result':'success', 'ComprasImportaciones':ComprasImportaciones, 'cantidadComprasImportaciones':cantidadComprasImportaciones})
+
+
 #------------------------  VENTA --------------------------
 
 @app.route('/cargarVentaImportaciones', methods=['POST'])
@@ -696,6 +726,39 @@ def cargarVentaImportaciones():
         return jsonify({'result':'Error', 'mensaje': 'Error al cargar Venta Importacion: '+str(e)})
     
     return jsonify({'result':'success', 'mensaje':"Venta Importacion cargada correctamente"})
+
+
+@app.route('/listarVentasImportaciones', methods=['GET'])
+def listarVentasImportaciones():
+   
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM importaciones_venta FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM importaciones_venta ORDER BY Id DESC ")
+        cursor.execute(sql)
+        ventasImportacionesBusqueda = cursor.fetchall()
+        cursor.close()
+
+        cantidadVentasImportaciones=0
+        VentasImportaciones=[]
+        for i in ventasImportacionesBusqueda:
+            elemento = {}
+            for index in range(len(columnasItem)):
+                elemento[columnasItem[index]] = i[index]
+            VentasImportaciones.append(elemento)      
+            cantidadVentasImportaciones=cantidadVentasImportaciones+1         
+           
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Ventas Importaciones: '+str(e)})
+
+    return jsonify({'result':'success', 'VentasImportaciones':VentasImportaciones, 'cantidadVentasImportaciones':cantidadVentasImportaciones})
 
 
 #---------------------  MERCADO INTERNO -------------------------
@@ -757,6 +820,112 @@ def cargarCompraMercadoInterno():
         return jsonify({'result':'Error', 'mensaje': 'Error al cargar Compra Mercado Interno: '+str(e)})
     
     return jsonify({'result':'success', 'mensaje':"Compra Mercado Interno cargada correctamente"})
+
+
+@app.route('/listarComprasMercadoInterno', methods=['GET'])
+def listarComprasMercadoInterno():
+   
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM mercado_interno_compra FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM mercado_interno_compra ORDER BY Id DESC ")
+        cursor.execute(sql)
+        comprasMercadoInternoBusqueda = cursor.fetchall()
+        cursor.close()
+
+        cantidadComprasMercadoInterno=0
+        ComprasMercadoInterno=[]
+        for i in comprasMercadoInternoBusqueda:
+            elemento = {}
+            for index in range(len(columnasItem)):
+                elemento[columnasItem[index]] = i[index]
+            ComprasMercadoInterno.append(elemento)      
+            cantidadComprasMercadoInterno=cantidadComprasMercadoInterno+1         
+           
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Compras Mercado Interno: '+str(e)})
+
+    return jsonify({'result':'success', 'ComprasMercadoInterno':ComprasMercadoInterno, 'cantidadComprasMercadoInterno':cantidadComprasMercadoInterno})
+
+
+#------------------------  VENTA --------------------------
+	
+@app.route('/cargarVentaMercadoInterno', methods=['POST'])
+def cargarVentaMercadoInterno():
+
+    Cliente=request.json['Cliente']
+    Telefono=request.json['Telefono']
+    Provincia=request.json['Provincia']
+    Producto=request.json['Producto']
+    Precio_por_bulto=request.json['Precio_por_bulto']
+    Cantidad_por_bulto=request.json['Cantidad_por_bulto']
+    
+    Precio_por_KG=request.json['Precio_por_KG']
+    Precio_total=request.json['Precio_total']
+    Forma_de_pago=request.json['Forma_de_pago']
+    Operacion=request.json['Operacion']
+    Nro_transaccion=request.json['Nro_transaccion']
+    Nro_factura=request.json['Nro_factura']
+
+    Importe_compra=request.json['Importe_compra']
+    Nro_remito=request.json['Nro_remito']
+    Establecimiento=request.json['Establecimiento']  
+    Observaciones=request.json['Observaciones']    
+    Camion=request.json['Camion']      
+  
+    try:
+        cursor=db.cursor()
+        sql = (" INSERT INTO mercado_interno_venta " + 
+               " VALUES (default,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ")
+        tupla=(Cliente,Telefono,Provincia,Producto,Precio_por_bulto,Cantidad_por_bulto,Precio_por_KG,Precio_total,Forma_de_pago,Operacion,Nro_transaccion,Nro_factura,Importe_compra,Nro_remito,Establecimiento,Observaciones,Camion)
+        cursor.execute(sql,tupla)
+        db.commit()         
+        cursor.close() 
+           
+    except Exception as e:        
+        return jsonify({'result':'Error', 'mensaje': 'Error al cargar Venta Mercado Interno: '+str(e)})
+    
+    return jsonify({'result':'success', 'mensaje':"Venta Mercado Interno cargada correctamente"})
+
+
+@app.route('/listarVentasMercadoInterno', methods=['GET'])
+def listarVentasMercadoInterno():
+   
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM mercado_interno_venta FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM mercado_interno_venta ORDER BY Id DESC ")
+        cursor.execute(sql)
+        ventasMercadoInternoBusqueda = cursor.fetchall()
+        cursor.close()
+
+        cantidadVentasMercadoInterno=0
+        VentasMercadoInterno=[]
+        for i in ventasMercadoInternoBusqueda:
+            elemento = {}
+            for index in range(len(columnasItem)):
+                elemento[columnasItem[index]] = i[index]
+            VentasMercadoInterno.append(elemento)      
+            cantidadVentasMercadoInterno=cantidadVentasMercadoInterno+1         
+           
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Ventas Mercado Interno: '+str(e)})
+
+    return jsonify({'result':'success', 'VentasMercadoInterno':VentasMercadoInterno, 'cantidadVentasMercadoInterno':cantidadVentasMercadoInterno})
 
 
 if __name__ == "__main__":

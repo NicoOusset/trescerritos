@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-09-2021 a las 12:58:23
+-- Tiempo de generación: 14-09-2021 a las 16:02:29
 -- Versión del servidor: 5.7.31
 -- Versión de PHP: 7.3.21
 
@@ -255,8 +255,43 @@ CREATE TABLE IF NOT EXISTS `mercado_interno_compra` (
 
 INSERT INTO `mercado_interno_compra` (`Id`, `Nombre_empresa`, `Nro_factura`, `Telefono`, `Pais`, `Provincia`, `Cliente`, `Nro_transaccion`, `Nro_remito`, `Producto`, `Fecha_emision_factura`, `Detalle_pago`, `Camion`, `Cantidad_bulto`, `Precio_unitario_ARS`, `Precio_flete_ARS`, `Precio_flete_unitario_ARS`, `Observaciones`) VALUES
 (1, 'AGROPECUARIA ARROYO SECO ', '0002-0326216549821', '3816+456312', 'Argentina', 'Tucuman', 1, '5', '25151-32154685', 'SANDIA', '2021-10-16', 'EFECTIVO', 2, 4200, 124, 226, 13, 'Observaciones de una compra de mercado interno'),
-(2, 'AGROPECUARIA ARROYO SECO ', '0002-0326216549821', '3816+456312', 'Argentina', 'Tucuman', 1, '5', '25151-32154685', 'SANDIA', '2021-10-16', 'EFECTIVO', 2, 4200, 124, 226, 13, 'Observaciones de una compra de mercado interno'),
-(3, 'AGROPECUARIA ARROYO SECO ', '0002-0326216549821', '3816+456312', 'Argentina', 'Tucuman', 1, '5', '25151-32154685', 'SANDIA', '2021-10-16', 'EFECTIVO', 2, 4200, 123.6, 226, 12.8, 'Observaciones de una compra de mercado interno');
+(3, 'Empresa 123', '0002-0326216549821', '3816+456312', 'Argentina', 'Tucuman', 1, '5', '25151-32154685', 'SANDIA', '2021-10-16', 'EFECTIVO', 2, 4200, 123.6, 226, 12.8, 'Observaciones de una compra de mercado interno');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mercado_interno_venta`
+--
+
+DROP TABLE IF EXISTS `mercado_interno_venta`;
+CREATE TABLE IF NOT EXISTS `mercado_interno_venta` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Cliente` int(11) NOT NULL,
+  `Telefono` varchar(50) NOT NULL,
+  `Provincia` varchar(50) NOT NULL,
+  `Producto` varchar(60) NOT NULL,
+  `Precio_por_bulto` float NOT NULL,
+  `Cantidad_por_bulto` int(11) NOT NULL,
+  `Precio_por_KG` float NOT NULL,
+  `Precio_total` float NOT NULL,
+  `Forma_de_pago` varchar(50) NOT NULL,
+  `Operacion` varchar(50) NOT NULL,
+  `Nro_transaccion` varchar(50) NOT NULL,
+  `Nro_factura` varchar(50) NOT NULL,
+  `Importe_compra` float NOT NULL,
+  `Nro_remito` varchar(50) NOT NULL,
+  `Establecimiento` varchar(60) NOT NULL,
+  `Observaciones` varchar(2000) NOT NULL,
+  `Camion` int(11) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `mercado_interno_venta`
+--
+
+INSERT INTO `mercado_interno_venta` (`Id`, `Cliente`, `Telefono`, `Provincia`, `Producto`, `Precio_por_bulto`, `Cantidad_por_bulto`, `Precio_por_KG`, `Precio_total`, `Forma_de_pago`, `Operacion`, `Nro_transaccion`, `Nro_factura`, `Importe_compra`, `Nro_remito`, `Establecimiento`, `Observaciones`, `Camion`) VALUES
+(1, 1, '1233532251', 'Tucuman', 'Bananas', 123.45, 45, 0, 5555.25, 'Efectivo', '12', '134112', '3453451-345', 5555.25, '2342', 'Las palmeras', 'Observacion de una Venta en Mercado Interno', 1);
 
 -- --------------------------------------------------------
 
