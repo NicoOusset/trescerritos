@@ -1,0 +1,2508 @@
+{
+	"log": {
+		"version": "1.2",
+		"creator": {
+			"name": "Insomnia REST Client",
+			"version": "insomnia.desktop.app:v2021.5.3"
+		},
+		"entries": [
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 4.639,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/crearCliente",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Nombre\":\"Carlos\",\n\t\"Apellido\":\"Mamani\",\n\t\"Direccion\":\"Laprida 758\",\n\t\"Telefono\":\"3816584712\",\n\t\"Correo\":\"carlos@gmail.com\",\n\t\"Cuit\":\"20-31205789-6\",\n\t\"Referente\":\"Santiago Mendez\",\n\t\"Razon_social\":\"Blue SRL\",\n\t\"Habilitacion_senasa\":\"Bgre67-17\"\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "72"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:11:26 GMT"
+						}
+					],
+					"content": {
+						"size": 72,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"cliente creado correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4.639,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CLIENTES - Crear cliente"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 4.492,
+				"request": {
+					"method": "GET",
+					"url": "http://127.0.0.1:4000/listarClientes",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "433"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:13:46 GMT"
+						}
+					],
+					"content": {
+						"size": 433,
+						"mimeType": "application/json",
+						"text": "{\n  \"cantidadClientes\": 1, \n  \"clientes\": [\n    {\n      \"Activo\": \"Si\", \n      \"Apellido\": \"Mamani\", \n      \"Correo\": \"carlos@gmail.com\", \n      \"Cuit\": \"20-31205789-6\", \n      \"Direccion\": \"Laprida 758\", \n      \"Habilitacion_senasa\": \"Bgre67-17\", \n      \"Id\": 3, \n      \"Nombre\": \"Carlos\", \n      \"Razon_social\": \"Blue SRL\", \n      \"Referente\": \"Santiago Mendez\", \n      \"Telefono\": \"3816584712\"\n    }\n  ], \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4.492,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CLIENTES - Listar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 16.203,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarClientes",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":\"\",\n\t\"Nombre\":\"\",\n\t\"Apellido\":\"\",\n\t\"Direccion\":\"\",\n\t\"Telefono\":\"\",\n\t\"Correo\":\"\",\n\t\"Cuit\":\"\",\n\t\"Referente\":\"\",\n\t\"Razon_social\":\"\",\n\t\"Habilitacion_senasa\":\"\"\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "433"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:13:45 GMT"
+						}
+					],
+					"content": {
+						"size": 433,
+						"mimeType": "application/json",
+						"text": "{\n  \"cantidadClientes\": 1, \n  \"clientes\": [\n    {\n      \"Activo\": \"Si\", \n      \"Apellido\": \"Mamani\", \n      \"Correo\": \"carlos@gmail.com\", \n      \"Cuit\": \"20-31205789-6\", \n      \"Direccion\": \"Laprida 758\", \n      \"Habilitacion_senasa\": \"Bgre67-17\", \n      \"Id\": 3, \n      \"Nombre\": \"Carlos\", \n      \"Razon_social\": \"Blue SRL\", \n      \"Referente\": \"Santiago Mendez\", \n      \"Telefono\": \"3816584712\"\n    }\n  ], \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 16.203,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CLIENTES - Buscar Clientes"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 4.630999999999999,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarDatosCliente",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "382"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 18:42:51 GMT"
+						}
+					],
+					"content": {
+						"size": 382,
+						"mimeType": "application/json",
+						"text": "{\n  \"datosCliente\": {\n    \"Activo\": \"Si\", \n    \"Apellido\": \"Perez\", \n    \"Correo\": \"prueba@email.com\", \n    \"Cuit\": \"20-12123123-8\", \n    \"Direccion\": \"Espa\\u00f1a 1423\", \n    \"Habilitacion_senasa\": \"12354-asd-5\", \n    \"Id\": 1, \n    \"Nombre\": \"Pedro\", \n    \"Razon_social\": \"Algo SRL\", \n    \"Referente\": \"Miguel Castillo\", \n    \"Telefono\": \"3816212121\"\n  }, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4.630999999999999,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CLIENTES - Buscar datos cliente"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 2.6359999999999997,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/modificarCliente",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":\"1\",\n\t\"Nombre\":\"Pedro\",\n\t\"Apellido\":\"Perez\",\n\t\"Direccion\":\"España 1423\",\n\t\"Telefono\":\"3816212121\",\n\t\"Correo\":\"prueba@email.com\",\n\t\"Cuit\":\"20-12123123-8\",\n\t\"Referente\":\"Miguel Castillo\",\n\t\"Razon_social\":\"Algo SRL\",\n\t\"Habilitacion_senasa\":\"12354-asd-5\"\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "76"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 01:11:10 GMT"
+						}
+					],
+					"content": {
+						"size": 76,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"cliente modificado correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 2.6359999999999997,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CLIENTES - Modificar cliente"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 5.417,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/eliminarCliente",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "77"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:13:40 GMT"
+						}
+					],
+					"content": {
+						"size": 77,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Cliente elimininado correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 5.417,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CLIENTES - Eliminar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 4.767,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/crearBroker",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Nombre\":\"Javier\",\n\t\"Apellido\":\"Alvarez\",\n\t\"Direccion\":\"Santa Fe 6842\",\n\t\"Telefono\":\"38154224828\",\n\t\"Correo\":\"javier@email.com\",\n\t\"Certificado_habilitacion\":\"1231173-ff\",\n\t\"Cuit\":\"26-242457426-6\"\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "71"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:14:53 GMT"
+						}
+					],
+					"content": {
+						"size": 71,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Broker creado correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4.767,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "BROKERS - Crear broker"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 4.535,
+				"request": {
+					"method": "GET",
+					"url": "http://127.0.0.1:4000/listarBrokers",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "368"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:15:44 GMT"
+						}
+					],
+					"content": {
+						"size": 368,
+						"mimeType": "application/json",
+						"text": "{\n  \"brokers\": [\n    {\n      \"Activo\": \"Si\", \n      \"Apellido\": \"Alvarez\", \n      \"Certificado_habilitacion\": \"1231173-ff\", \n      \"Correo\": \"javier@email.com\", \n      \"Cuit\": \"26-242457426-6\", \n      \"Direccion\": \"Santa Fe 6842\", \n      \"Id\": 2, \n      \"Nombre\": \"Javier\", \n      \"Telefono\": \"38154224828\"\n    }\n  ], \n  \"cantidadBrokers\": 1, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4.535,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "BROKERS - Listar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 5.307,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarBrokers",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":\"\",\n\t\"Nombre\":\"Gus\",\n\t\"Apellido\":\"\",\n\t\"Direccion\":\"\",\n\t\"Telefono\":\"\",\n\t\"Correo\":\"\",\n\t\"Cuit\":\"\",\n\t\"Certificado_habilitacion\":\"\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "369"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:15:02 GMT"
+						}
+					],
+					"content": {
+						"size": 369,
+						"mimeType": "application/json",
+						"text": "{\n  \"brokers\": [\n    {\n      \"Activo\": \"Si\", \n      \"Apellido\": \"Gomez\", \n      \"Certificado_habilitacion\": \"qwe2154-5\", \n      \"Correo\": \"Manuel@email.com\", \n      \"Cuit\": \"20-51432583-7\", \n      \"Direccion\": \"Italia 6458\", \n      \"Id\": 1, \n      \"Nombre\": \"Manuel Gustavo\", \n      \"Telefono\": \"3814789123\"\n    }\n  ], \n  \"cantidadBrokers\": 1, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 5.307,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "BROKERS - Buscar brokers"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 4.4510000000000005,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarDatosBroker",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "318"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 18:41:18 GMT"
+						}
+					],
+					"content": {
+						"size": 318,
+						"mimeType": "application/json",
+						"text": "{\n  \"datosBroker\": {\n    \"Activo\": \"Si\", \n    \"Apellido\": \"Gomez\", \n    \"Certificado_habilitacion\": \"qwe2154-5\", \n    \"Correo\": \"Manuel@email.com\", \n    \"Cuit\": \"20-51432583-7\", \n    \"Direccion\": \"Italia 6458\", \n    \"Id\": 1, \n    \"Nombre\": \"Manuel Gustavo\", \n    \"Telefono\": \"3814789123\"\n  }, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4.4510000000000005,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "BROKERS - Buscar datos broker"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 3.738,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/eliminarBroker",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "76"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:15:39 GMT"
+						}
+					],
+					"content": {
+						"size": 76,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Broker elimininado correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 3.738,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "BROKERS - Eliminar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 6.36,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/modificarBroker",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1,\n\t\"Nombre\":\"Manuel Gustavo\",\n\t\"Apellido\":\"Gomez\",\n\t\"Direccion\":\"Italia 6458\",\n\t\"Telefono\":\"3814789123\",\n\t\"Correo\":\"Manuel@email.com\",\n\t\"Certificado_habilitacion\":\"qwe2154-5\",\n\t\"Cuit\":\"20-51432583-7\"\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "75"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:15:13 GMT"
+						}
+					],
+					"content": {
+						"size": 75,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Broker modificado correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 6.36,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "BROKERS - Modificar broker"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 36.583999999999996,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/crearCamion",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Chofer\":\"Lucas Castro\",\n\t\"DNI\":30123887,\t\n\t\"Telefono\":\"3815728964\",\n\t\"Direccion\":\"calle 3\",\n\t\"Marca\":\"Mercedes 123\",\n\t\"Patente_chasis\":\"AA111QL\",\n\t\"Patente_semi_acoplado\":\"ZSE458\",\n\t\"Detalle_camion\":\"Camion grande color negro y rojo\"\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "71"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:17:51 GMT"
+						}
+					],
+					"content": {
+						"size": 71,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Camion creado correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 36.583999999999996,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CAMION - Crear camion"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 12.849,
+				"request": {
+					"method": "GET",
+					"url": "http://127.0.0.1:4000/listarCamiones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "779"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:18:48 GMT"
+						}
+					],
+					"content": {
+						"size": 779,
+						"mimeType": "application/json",
+						"text": "{\n  \"camiones\": [\n    {\n      \"Activo\": \"Si\", \n      \"Chofer\": \"Santiago Mendez\", \n      \"DNI\": 30123456, \n      \"Detalle_camion\": \"Es de color Rojo\", \n      \"Direccion\": \"Esquiu 543\", \n      \"Id\": 1, \n      \"Marca\": \"Escania\", \n      \"Patente_chasis\": \"AC-666-DC\", \n      \"Patente_semi_acoplado\": \"AC-777-DC\", \n      \"Telefono\": \"3816666444\"\n    }, \n    {\n      \"Activo\": \"Si\", \n      \"Chofer\": \"Hector De Gaetano\", \n      \"DNI\": 33430082, \n      \"Detalle_camion\": \"Escania color rojo termo blanco insignia VPM\", \n      \"Direccion\": \"SAN MIGUEL DE TUCUMAN\", \n      \"Id\": 2, \n      \"Marca\": \"ESCANIA 410\", \n      \"Patente_chasis\": \"AB608XL\", \n      \"Patente_semi_acoplado\": \"OLF2798\", \n      \"Telefono\": \"3816452125\"\n    }\n  ], \n  \"cantidadCamiones\": 2, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 12.849,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CAMION - Listar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 19.379,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarCamiones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":\"\",\n\t\"Chofer\":\"\",\n\t\"DNI\":\"\",\t\n\t\"Telefono\":\"\",\n\t\"Direccion\":\"\",\n\t\"Marca\":\"\",\n\t\"Patente_chasis\":\"\",\n\t\"Patente_semi_acoplado\":\"\",\n\t\"Detalle_camion\":\"\"\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "1122"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:18:02 GMT"
+						}
+					],
+					"content": {
+						"size": 1122,
+						"mimeType": "application/json",
+						"text": "{\n  \"camiones\": [\n    {\n      \"Activo\": \"Si\", \n      \"Chofer\": \"Santiago Mendez\", \n      \"DNI\": 30123456, \n      \"Detalle_camion\": \"Es de color Rojo\", \n      \"Direccion\": \"Esquiu 543\", \n      \"Id\": 1, \n      \"Marca\": \"Escania\", \n      \"Patente_chasis\": \"AC-666-DC\", \n      \"Patente_semi_acoplado\": \"AC-777-DC\", \n      \"Telefono\": \"3816666444\"\n    }, \n    {\n      \"Activo\": \"Si\", \n      \"Chofer\": \"Hector De Gaetano\", \n      \"DNI\": 33430082, \n      \"Detalle_camion\": \"Escania color rojo termo blanco insignia VPM\", \n      \"Direccion\": \"SAN MIGUEL DE TUCUMAN\", \n      \"Id\": 2, \n      \"Marca\": \"ESCANIA 410\", \n      \"Patente_chasis\": \"AB608XL\", \n      \"Patente_semi_acoplado\": \"OLF2798\", \n      \"Telefono\": \"3816452125\"\n    }, \n    {\n      \"Activo\": \"Si\", \n      \"Chofer\": \"Lucas Castro\", \n      \"DNI\": 30123887, \n      \"Detalle_camion\": \"Camion grande color negro y rojo\", \n      \"Direccion\": \"calle 3\", \n      \"Id\": 3, \n      \"Marca\": \"Mercedes 123\", \n      \"Patente_chasis\": \"AA111QL\", \n      \"Patente_semi_acoplado\": \"ZSE458\", \n      \"Telefono\": \"3815728964\"\n    }\n  ], \n  \"cantidadCamiones\": 3, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 19.379,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CAMION - Buscar camiones"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 5.742,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarDatosCamion",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":3\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "360"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 18:39:41 GMT"
+						}
+					],
+					"content": {
+						"size": 360,
+						"mimeType": "application/json",
+						"text": "{\n  \"datosCamion\": {\n    \"Activo\": \"Si\", \n    \"Chofer\": \"Lucas Castro\", \n    \"DNI\": 30123887, \n    \"Detalle_camion\": \"Camion grande color negro y rojo\", \n    \"Direccion\": \"calle 3\", \n    \"Id\": 3, \n    \"Marca\": \"Mercedes 123\", \n    \"Patente_chasis\": \"AA111QL\", \n    \"Patente_semi_acoplado\": \"ZSE458\", \n    \"Telefono\": \"3815728964\"\n  }, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 5.742,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CAMION - Buscar datos camion"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 2.749,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/eliminarCamion",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":3\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "76"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:18:45 GMT"
+						}
+					],
+					"content": {
+						"size": 76,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Camion elimininado correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 2.749,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CAMION - Eliminar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 11.368,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/modificarCamion",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":2,\n\t\"Chofer\":\"Hector De Gaetano\",\n\t\"DNI\":33430082,\t\n\t\"Telefono\":\"3816452125\",\n\t\"Direccion\":\"SAN MIGUEL DE TUCUMAN\",\n\t\"Marca\":\"ESCANIA 410\",\n\t\"Patente_chasis\":\"AB608XL\",\n\t\"Patente_semi_acoplado\":\"OLF2798\",\n\t\"Detalle_camion\":\"Escania color rojo termo blanco insignia VPM\"\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "75"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 23:18:08 GMT"
+						}
+					],
+					"content": {
+						"size": 75,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Camion modificado correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 11.368,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "CAMION - Modificar camion"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 28.330000000000002,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/cargarCompraImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Nombre_empresa\":\"A&T\",\n\t\"Nro_factura\":\"002-00008459\",\n\t\"Telefono\":\"15463541831\",\n\t\"Localidad\":\"TEMBIAPORA\",\n\t\"Pais\":\"PARAGUAY\",\n\t\"Cliente\":2,\n\t\"Nro_transaccion\":\"32154\",\n\t\"Nro_remito\":\"021626+5135\",\n\t\"Broker\":1,\n\t\"Precio_dolar_transaccion\":8.36,\n\t\"Producto\":\"BANANA \",\n\t\"Precio_unitario_USD\":8,\n\t\"Precio_flete_USD\":1350,\n\t\"Precio_flete_unitario_USD\":3,\n\t\"Gasto_despacho_USD\":1500,\n\t\"Gasto_despacho_unitario_USD\":1.5,\n\t\"Fecha_emision_factura\":\"16/10/2021\",\n\t\"Fecha_ingreso_pais\":\"19/10/2021\",\n\t\"Detalle_pago\":\"EFECTIVO  X BCO\",\n\t\"Camion\":1,\n\t\"Cantidad_bulto\":1050,\n\t\"Precio_unitario_ARS\":900,\n\t\"Precio_flete_ARS\":130000,\n\t\"Precio_flete_unitario_ARS\":130,\n\t\"Gasto_despacho_ARS\":210000,\n\t\"Gasto_despacho_unitario_ARS\":210,\n\t\"Fecha_deposito\":\"22/10/2021\",\n\t\"Observaciones\":\"LLEGARON 1050 CAJAS DE BANANAS CON PROMEDIO DE 22.5 KG DE FRUTA  DE LOS CUALES LLEGARON 150 MANCHADAS Y 50 ABANDERADAS \",\n\t\"CRT\":\"00000000513216594563\",\n\t\"Nro_MIC\":\"0000023154156323561\",\n\t\"Nro_CUVE\":\"000000516531235435\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "84"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 05 Sep 2021 13:18:44 GMT"
+						}
+					],
+					"content": {
+						"size": 84,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Compra Importacion cargada correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 28.330000000000002,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES COMPRA - Cargar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 276.217,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarComprasImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Nombre_empresa\":\"\",\n\t\"Nro_factura\":\"\",\n\t\"Cliente\":\"\",\n\t\"Nro_transaccion\":\"\",\n\t\"Broker\":2,\n\t\"Producto\":\"\",\n\t\"Camion\":\"\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "95"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 20:20:24 GMT"
+						}
+					],
+					"content": {
+						"size": 95,
+						"mimeType": "application/json",
+						"text": "{\n  \"ComprasImportaciones\": [], \n  \"cantidadComprasImportaciones\": 0, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 276.217,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES COMPRA - Buscar compras"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 191.413,
+				"request": {
+					"method": "GET",
+					"url": "http://127.0.0.1:4000/listarComprasImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "1409"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 15:51:14 GMT"
+						}
+					],
+					"content": {
+						"size": 1409,
+						"mimeType": "application/json",
+						"text": "{\n  \"ComprasImportaciones\": [\n    {\n      \"Broker\": 1, \n      \"CRT\": \"00000000513216594563\", \n      \"Camion\": 1, \n      \"Cantidad_bulto\": 1050, \n      \"Cliente\": 2, \n      \"Detalle_pago\": \"EFECTIVO  X BCO\", \n      \"Fecha_deposito\": \"Fri, 22 Oct 2021 00:00:00 GMT\", \n      \"Fecha_emision_factura\": \"Sat, 16 Oct 2021 00:00:00 GMT\", \n      \"Fecha_ingreso_pais\": \"Tue, 19 Oct 2021 00:00:00 GMT\", \n      \"Gasto_despacho_ARS\": 210000.0, \n      \"Gasto_despacho_USD\": 1500.0, \n      \"Gasto_despacho_unitario_ARS\": 210.0, \n      \"Gasto_despacho_unitario_USD\": 1.5, \n      \"Id\": 1, \n      \"Localidad\": \"TEMBIAPORA\", \n      \"Nombre_empresa\": \"A&T\", \n      \"Nro_CUVE\": \"000000516531235435\", \n      \"Nro_MIC\": \"0000023154156323561\", \n      \"Nro_factura\": \"002-00008459\", \n      \"Nro_remito\": \"021626+5135\", \n      \"Nro_transaccion\": \"32154\", \n      \"Observaciones\": \"LLEGARON 1050 CAJAS DE BANANAS CON PROMEDIO DE 22.5 KG DE FRUTA  DE LOS CUALES LLEGARON 150 MANCHADAS Y 50 ABANDERADAS \", \n      \"Pais\": \"PARAGUAY\", \n      \"Precio_dolar_transaccion\": 8.36, \n      \"Precio_flete_ARS\": 130000.0, \n      \"Precio_flete_USD\": 1350.0, \n      \"Precio_flete_unitario_ARS\": 130.0, \n      \"Precio_flete_unitario_USD\": 3.0, \n      \"Precio_unitario_ARS\": 900.0, \n      \"Precio_unitario_USD\": 8.0, \n      \"Producto\": \"BANANA \", \n      \"Telefono\": \"15463541831\"\n    }\n  ], \n  \"cantidadComprasImportaciones\": 1, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 191.413,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES COMPRA - Listar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 17.774,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarUnaCompraImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "1299"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 18:46:39 GMT"
+						}
+					],
+					"content": {
+						"size": 1299,
+						"mimeType": "application/json",
+						"text": "{\n  \"datosCompraImportaciones\": {\n    \"Broker\": 1, \n    \"CRT\": \"00000000513216594563\", \n    \"Camion\": 1, \n    \"Cantidad_bulto\": 1050, \n    \"Cliente\": 2, \n    \"Detalle_pago\": \"EFECTIVO  X BCO\", \n    \"Fecha_deposito\": \"Fri, 22 Oct 2021 00:00:00 GMT\", \n    \"Fecha_emision_factura\": \"Sat, 16 Oct 2021 00:00:00 GMT\", \n    \"Fecha_ingreso_pais\": \"Tue, 19 Oct 2021 00:00:00 GMT\", \n    \"Gasto_despacho_ARS\": 210000.0, \n    \"Gasto_despacho_USD\": 1500.0, \n    \"Gasto_despacho_unitario_ARS\": 210.0, \n    \"Gasto_despacho_unitario_USD\": 1.5, \n    \"Id\": 1, \n    \"Localidad\": \"TEMBIAPORA\", \n    \"Nombre_empresa\": \"A&T\", \n    \"Nro_CUVE\": \"000000516531235435\", \n    \"Nro_MIC\": \"0000023154156323561\", \n    \"Nro_factura\": \"002-00008459\", \n    \"Nro_remito\": \"021626+5135\", \n    \"Nro_transaccion\": \"32154\", \n    \"Observaciones\": \"LLEGARON 1050 CAJAS DE BANANAS CON PROMEDIO DE 22.5 KG DE FRUTA  DE LOS CUALES LLEGARON 150 MANCHADAS Y 50 ABANDERADAS \", \n    \"Pais\": \"PARAGUAY\", \n    \"Precio_dolar_transaccion\": 8.36, \n    \"Precio_flete_ARS\": 130000.0, \n    \"Precio_flete_USD\": 1350.0, \n    \"Precio_flete_unitario_ARS\": 130.0, \n    \"Precio_flete_unitario_USD\": 3.0, \n    \"Precio_unitario_ARS\": 900.0, \n    \"Precio_unitario_USD\": 8.0, \n    \"Producto\": \"BANANA \", \n    \"Telefono\": \"15463541831\"\n  }, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 17.774,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES COMPRA - Buscar datos"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 0,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/eliminarCompraImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 0,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"content": {
+						"size": 0,
+						"mimeType": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 0,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES COMPRA - Eliminar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 292.842,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/cargarVentaImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Cliente\":1,\n\t\"Nro_factura\":\"0012-31265465321\",\n\t\"Telefono\":\"38152565465\",\n\t\"Precio_dolar_transaccion\":105,\n\t\"Producto\":\"MANZANAS\",\n\t\"Precio_bulto\":1200,\n\t\"Precio_total\":1200000,\n\t\"Nro_transaccion\":\"314455\",\n\t\"Importe_compra\":1200000,\n\t\"Nro_remito\":\"00000.-0001235235\",\n\t\"Pais\":\"ARGENTINA\",\n\t\"Provincia\":\"TUCUMAN\",\n\t\"Localidad\":\"YERBA BUENA\",\n\t\"Establecimiento\":\"MERCOFRUT\",\n\t\"Observaciones\":\"Observaciones de una venta de importaciones\",\n\t\"Camion\":3,\n\t\"formas_de_pago\":[\n\t\t{\"tipo\":\"PARCIAL EN EFECTIVO\" , \"monto\":\"500000\", \"fecha\":\"22/10/2021\"},\n\t\t{\"tipo\":\"PARCIAL EN EFECTIVO\" , \"monto\":\"300000\", \"fecha\":\"23/10/2021\"},\n\t\t{\"tipo\":\"PARCIAL EN EFECTIVO\" , \"monto\":\"400000\", \"fecha\":\"25/10/2021\"}\n\t]\n\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "83"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Wed, 08 Sep 2021 11:35:18 GMT"
+						}
+					],
+					"content": {
+						"size": 83,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Venta Importacion cargada correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 292.842,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES VENTA - Cargar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 44.33,
+				"request": {
+					"method": "GET",
+					"url": "http://127.0.0.1:4000/listarVentasImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "1294"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 15:51:44 GMT"
+						}
+					],
+					"content": {
+						"size": 1294,
+						"mimeType": "application/json",
+						"text": "{\n  \"VentasImportaciones\": [\n    {\n      \"Camion\": 3, \n      \"Cliente\": 1, \n      \"Establecimiento\": \"MERCOFRUT\", \n      \"Id\": 2, \n      \"Importe_compra\": 1200000.0, \n      \"Localidad\": \"YERBA BUENA\", \n      \"Nro_factura\": \"0012-31265465321\", \n      \"Nro_remito\": \"00000.-0001235235\", \n      \"Nro_transaccion\": \"314455\", \n      \"Observaciones\": \"Observaciones de una venta de importaciones\", \n      \"Pais\": \"ARGENTINA\", \n      \"Precio_bulto\": 1200.0, \n      \"Precio_dolar_transaccion\": 105.0, \n      \"Precio_total\": 1200000.0, \n      \"Producto\": \"MANZANAS\", \n      \"Provincia\": \"TUCUMAN\", \n      \"Telefono\": \"38152565465\"\n    }, \n    {\n      \"Camion\": 3, \n      \"Cliente\": 1, \n      \"Establecimiento\": \"MERCOFRUT\", \n      \"Id\": 1, \n      \"Importe_compra\": 1200000.0, \n      \"Localidad\": \"YERBA BUENA\", \n      \"Nro_factura\": \"0012-31265465321\", \n      \"Nro_remito\": \"00000.-0002161515\", \n      \"Nro_transaccion\": \"123154\", \n      \"Observaciones\": \"Observaciones de una venta de importaciones\", \n      \"Pais\": \"ARGENTINA\", \n      \"Precio_bulto\": 1200.0, \n      \"Precio_dolar_transaccion\": 105.0, \n      \"Precio_total\": 1200000.0, \n      \"Producto\": \"BANANA\", \n      \"Provincia\": \"TUCUMAN\", \n      \"Telefono\": \"38152565465\"\n    }\n  ], \n  \"cantidadVentasImportaciones\": 2, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 44.33,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES VENTA - Listar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 5.823,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarVentasImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Establecimiento\":\"\",\n\t\"Nro_factura\":\"\",\n\t\"Cliente\":1,\n\t\"Nro_transaccion\":\"\",\t\n\t\"Producto\":\"\",\n\t\"Camion\":\"\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "1294"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 20:27:03 GMT"
+						}
+					],
+					"content": {
+						"size": 1294,
+						"mimeType": "application/json",
+						"text": "{\n  \"VentasImportaciones\": [\n    {\n      \"Camion\": 3, \n      \"Cliente\": 1, \n      \"Establecimiento\": \"MERCOFRUT\", \n      \"Id\": 2, \n      \"Importe_compra\": 1200000.0, \n      \"Localidad\": \"YERBA BUENA\", \n      \"Nro_factura\": \"0012-31265465321\", \n      \"Nro_remito\": \"00000.-0001235235\", \n      \"Nro_transaccion\": \"314455\", \n      \"Observaciones\": \"Observaciones de una venta de importaciones\", \n      \"Pais\": \"ARGENTINA\", \n      \"Precio_bulto\": 1200.0, \n      \"Precio_dolar_transaccion\": 105.0, \n      \"Precio_total\": 1200000.0, \n      \"Producto\": \"MANZANAS\", \n      \"Provincia\": \"TUCUMAN\", \n      \"Telefono\": \"38152565465\"\n    }, \n    {\n      \"Camion\": 3, \n      \"Cliente\": 1, \n      \"Establecimiento\": \"MERCOFRUT\", \n      \"Id\": 1, \n      \"Importe_compra\": 1200000.0, \n      \"Localidad\": \"YERBA BUENA\", \n      \"Nro_factura\": \"0012-31265465321\", \n      \"Nro_remito\": \"00000.-0002161515\", \n      \"Nro_transaccion\": \"123154\", \n      \"Observaciones\": \"Observaciones de una venta de importaciones\", \n      \"Pais\": \"ARGENTINA\", \n      \"Precio_bulto\": 1200.0, \n      \"Precio_dolar_transaccion\": 105.0, \n      \"Precio_total\": 1200000.0, \n      \"Producto\": \"BANANA\", \n      \"Provincia\": \"TUCUMAN\", \n      \"Telefono\": \"38152565465\"\n    }\n  ], \n  \"cantidadVentasImportaciones\": 2, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 5.823,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES VENTA - Buscar ventas"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 5.178999999999999,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarUnaVentaImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "614"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 18:49:28 GMT"
+						}
+					],
+					"content": {
+						"size": 614,
+						"mimeType": "application/json",
+						"text": "{\n  \"datosVentaImportaciones\": {\n    \"Camion\": 3, \n    \"Cliente\": 1, \n    \"Establecimiento\": \"MERCOFRUT\", \n    \"Id\": 1, \n    \"Importe_compra\": 1200000.0, \n    \"Localidad\": \"YERBA BUENA\", \n    \"Nro_factura\": \"0012-31265465321\", \n    \"Nro_remito\": \"00000.-0002161515\", \n    \"Nro_transaccion\": \"123154\", \n    \"Observaciones\": \"Observaciones de una venta de importaciones\", \n    \"Pais\": \"ARGENTINA\", \n    \"Precio_bulto\": 1200.0, \n    \"Precio_dolar_transaccion\": 105.0, \n    \"Precio_total\": 1200000.0, \n    \"Producto\": \"BANANA\", \n    \"Provincia\": \"TUCUMAN\", \n    \"Telefono\": \"38152565465\"\n  }, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 5.178999999999999,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES VENTA - Buscar datos"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 0,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/eliminarVentaImportaciones",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 0,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"content": {
+						"size": 0,
+						"mimeType": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 0,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "IMPORTACIONES VENTA - Eliminar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 4.407,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/cargarCompraMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Nombre_empresa\":\"AGROPECUARIA ARROYO SECO \",\n\t\"Nro_factura\":\"0002-0326216549821\",\n\t\"Telefono\":\"3816+456312\",\n\t\"Pais\":\"Argentina\",\n\t\"Provincia\":\"Tucuman\",\n\t\"Cliente\":1,\n\t\"Nro_transaccion\":\"5\",\n\t\"Nro_remito\":\"25151-32154685\",\n\t\"Producto\":\"SANDIA\",\n\t\"Fecha_emision_factura\":\"16/10/2021\",\n\t\"Detalle_pago\":\"EFECTIVO\",\n\t\"Camion\":2,\n\t\"Cantidad_bulto\":4200,\n\t\"Precio_unitario_ARS\":123.6,\n\t\"Precio_flete_ARS\":226,\n\t\"Precio_flete_unitario_ARS\":12.8,\n\t\"Observaciones\":\"Observaciones de una compra de mercado interno\",\n\t\n\t\n\t\"depositos\":\n\t[\n\t\t{\"monto\":\"50000\", \"fecha\":\"10/12/2021\"},\n\t\t{\"monto\":\"3000\", \"fecha\":\"17/10/2021\"}\n\t]\n\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "88"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Wed, 08 Sep 2021 12:51:49 GMT"
+						}
+					],
+					"content": {
+						"size": 88,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Compra Mercado Interno cargada correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4.407,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO COMPRA - Cargar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 4.144,
+				"request": {
+					"method": "GET",
+					"url": "http://127.0.0.1:4000/listarComprasMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "1438"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 16:01:32 GMT"
+						}
+					],
+					"content": {
+						"size": 1438,
+						"mimeType": "application/json",
+						"text": "{\n  \"ComprasMercadoInterno\": [\n    {\n      \"Camion\": 2, \n      \"Cantidad_bulto\": 4200, \n      \"Cliente\": 1, \n      \"Detalle_pago\": \"EFECTIVO\", \n      \"Fecha_emision_factura\": \"Sat, 16 Oct 2021 00:00:00 GMT\", \n      \"Id\": 3, \n      \"Nombre_empresa\": \"Empresa 123\", \n      \"Nro_factura\": \"0002-0326216549821\", \n      \"Nro_remito\": \"25151-32154685\", \n      \"Nro_transaccion\": \"5\", \n      \"Observaciones\": \"Observaciones de una compra de mercado interno\", \n      \"Pais\": \"Argentina\", \n      \"Precio_flete_ARS\": 226.0, \n      \"Precio_flete_unitario_ARS\": 12.8, \n      \"Precio_unitario_ARS\": 123.6, \n      \"Producto\": \"SANDIA\", \n      \"Provincia\": \"Tucuman\", \n      \"Telefono\": \"3816+456312\"\n    }, \n    {\n      \"Camion\": 2, \n      \"Cantidad_bulto\": 4200, \n      \"Cliente\": 1, \n      \"Detalle_pago\": \"EFECTIVO\", \n      \"Fecha_emision_factura\": \"Sat, 16 Oct 2021 00:00:00 GMT\", \n      \"Id\": 1, \n      \"Nombre_empresa\": \"AGROPECUARIA ARROYO SECO \", \n      \"Nro_factura\": \"0002-0326216549821\", \n      \"Nro_remito\": \"25151-32154685\", \n      \"Nro_transaccion\": \"5\", \n      \"Observaciones\": \"Observaciones de una compra de mercado interno\", \n      \"Pais\": \"Argentina\", \n      \"Precio_flete_ARS\": 226.0, \n      \"Precio_flete_unitario_ARS\": 13.0, \n      \"Precio_unitario_ARS\": 124.0, \n      \"Producto\": \"SANDIA\", \n      \"Provincia\": \"Tucuman\", \n      \"Telefono\": \"3816+456312\"\n    }\n  ], \n  \"cantidadComprasMercadoInterno\": 2, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4.144,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO COMPRA - Listar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 3.927,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarComprasMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Nombre_empresa\":\"Empresa\",\n\t\"Nro_factura\":\"\",\n\t\"Cliente\":\"\",\n\t\"Nro_transaccion\":\"\",\t\n\t\"Producto\":\"\",\n\t\"Camion\":\"\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "761"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 20:34:45 GMT"
+						}
+					],
+					"content": {
+						"size": 761,
+						"mimeType": "application/json",
+						"text": "{\n  \"ComprasMercadoInterno\": [\n    {\n      \"Camion\": 2, \n      \"Cantidad_bulto\": 4200, \n      \"Cliente\": 1, \n      \"Detalle_pago\": \"EFECTIVO\", \n      \"Fecha_emision_factura\": \"Sat, 16 Oct 2021 00:00:00 GMT\", \n      \"Id\": 3, \n      \"Nombre_empresa\": \"Empresa 123\", \n      \"Nro_factura\": \"0002-0326216549821\", \n      \"Nro_remito\": \"25151-32154685\", \n      \"Nro_transaccion\": \"5\", \n      \"Observaciones\": \"Observaciones de una compra de mercado interno\", \n      \"Pais\": \"Argentina\", \n      \"Precio_flete_ARS\": 226.0, \n      \"Precio_flete_unitario_ARS\": 12.8, \n      \"Precio_unitario_ARS\": 123.6, \n      \"Producto\": \"SANDIA\", \n      \"Provincia\": \"Tucuman\", \n      \"Telefono\": \"3816+456312\"\n    }\n  ], \n  \"cantidadComprasMercadoInterno\": 1, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 3.927,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO COMPRA - Buscar compras "
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 15,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarUnaCompraMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "687"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 18:56:02 GMT"
+						}
+					],
+					"content": {
+						"size": 687,
+						"mimeType": "application/json",
+						"text": "{\n  \"compraMercadoInterno\": {\n    \"Camion\": 2, \n    \"Cantidad_bulto\": 4200, \n    \"Cliente\": 1, \n    \"Detalle_pago\": \"EFECTIVO\", \n    \"Fecha_emision_factura\": \"Sat, 16 Oct 2021 00:00:00 GMT\", \n    \"Id\": 1, \n    \"Nombre_empresa\": \"AGROPECUARIA ARROYO SECO \", \n    \"Nro_factura\": \"0002-0326216549821\", \n    \"Nro_remito\": \"25151-32154685\", \n    \"Nro_transaccion\": \"5\", \n    \"Observaciones\": \"Observaciones de una compra de mercado interno\", \n    \"Pais\": \"Argentina\", \n    \"Precio_flete_ARS\": 226.0, \n    \"Precio_flete_unitario_ARS\": 13.0, \n    \"Precio_unitario_ARS\": 124.0, \n    \"Producto\": \"SANDIA\", \n    \"Provincia\": \"Tucuman\", \n    \"Telefono\": \"3816+456312\"\n  }, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 15,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO COMPRA - Buscar datos"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 0,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/eliminarCompraMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 0,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"content": {
+						"size": 0,
+						"mimeType": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 0,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO COMPRA - Eliminar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 49.385,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/cargarVentaMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Cliente\":1,\n\t\"Telefono\":\"1233532251\",\n\t\"Provincia\":\"Tucuman\",\n\t\"Producto\":\"Bananas\",\n\t\"Precio_por_bulto\":123.45,\n\t\"Cantidad_por_bulto\":45,\n\t\"Precio_por_KG\":0,\n\t\"Precio_total\":5555.25,\n\t\"Forma_de_pago\":\"Efectivo\",\n\t\"Operacion\":\"12\",\n\t\"Nro_transaccion\":\"134112\",\n\t\"Nro_factura\":\"3453451-345\",\n\t\"Importe_compra\":5555.25,\n\t\"Nro_remito\":\"2342\",\n\t\"Establecimiento\":\"Las palmeras\",\n\t\"Observaciones\":\"Observacion de una Venta en Mercado Interno\",\n\t\"Camion\":1\t\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "87"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Thu, 09 Sep 2021 14:14:05 GMT"
+						}
+					],
+					"content": {
+						"size": 87,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Venta Mercado Interno cargada correctamente\", \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 49.385,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO VENTA - Cargar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 8.129000000000001,
+				"request": {
+					"method": "GET",
+					"url": "http://127.0.0.1:4000/listarVentasMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "699"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 18:59:28 GMT"
+						}
+					],
+					"content": {
+						"size": 699,
+						"mimeType": "application/json",
+						"text": "{\n  \"VentasMercadoInterno\": [\n    {\n      \"Camion\": 1, \n      \"Cantidad_por_bulto\": 45, \n      \"Cliente\": 1, \n      \"Establecimiento\": \"Las palmeras\", \n      \"Forma_de_pago\": \"Efectivo\", \n      \"Id\": 1, \n      \"Importe_compra\": 5555.25, \n      \"Nro_factura\": \"3453451-345\", \n      \"Nro_remito\": \"2342\", \n      \"Nro_transaccion\": \"134112\", \n      \"Observaciones\": \"Observacion de una Venta en Mercado Interno\", \n      \"Operacion\": \"12\", \n      \"Precio_por_KG\": 0.0, \n      \"Precio_por_bulto\": 123.45, \n      \"Precio_total\": 5555.25, \n      \"Producto\": \"Bananas\", \n      \"Provincia\": \"Tucuman\", \n      \"Telefono\": \"1233532251\"\n    }\n  ], \n  \"cantidadVentasMercadoInterno\": 1, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 8.129000000000001,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO VENTA - Listar"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 3.9,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarVentasMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Establecimiento\":\"\",\n\t\"Nro_factura\":\"\",\n\t\"Cliente\":1,\n\t\"Nro_transaccion\":\"41\",\t\n\t\"Producto\":\"\",\n\t\"Camion\":\"\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "699"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 20:39:36 GMT"
+						}
+					],
+					"content": {
+						"size": 699,
+						"mimeType": "application/json",
+						"text": "{\n  \"VentasMercadoInterno\": [\n    {\n      \"Camion\": 1, \n      \"Cantidad_por_bulto\": 45, \n      \"Cliente\": 1, \n      \"Establecimiento\": \"Las palmeras\", \n      \"Forma_de_pago\": \"Efectivo\", \n      \"Id\": 1, \n      \"Importe_compra\": 5555.25, \n      \"Nro_factura\": \"3453451-345\", \n      \"Nro_remito\": \"2342\", \n      \"Nro_transaccion\": \"134112\", \n      \"Observaciones\": \"Observacion de una Venta en Mercado Interno\", \n      \"Operacion\": \"12\", \n      \"Precio_por_KG\": 0.0, \n      \"Precio_por_bulto\": 123.45, \n      \"Precio_total\": 5555.25, \n      \"Producto\": \"Bananas\", \n      \"Provincia\": \"Tucuman\", \n      \"Telefono\": \"1233532251\"\n    }\n  ], \n  \"cantidadVentasMercadoInterno\": 1, \n  \"result\": \"success\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 3.9,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO VENTA - Buscar ventas"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 15.972,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/buscarUnaVentaMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Content-Length",
+							"value": "119"
+						},
+						{
+							"name": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.6"
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 14 Sep 2021 18:55:51 GMT"
+						}
+					],
+					"content": {
+						"size": 119,
+						"mimeType": "application/json",
+						"text": "{\n  \"mensaje\": \"Error al buscar Venta Mercado Interno: 'NoneType' object is not subscriptable\", \n  \"result\": \"Error\"\n}\n"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 15.972,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO VENTA - Buscar datos"
+			},
+			{
+				"startedDateTime": "2021-09-16T14:06:31.494Z",
+				"time": 0,
+				"request": {
+					"method": "POST",
+					"url": "http://127.0.0.1:4000/eliminarVentaMercadoInterno",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"Id\":1\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 0,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"content": {
+						"size": 0,
+						"mimeType": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 0,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "MERCADO INTERNO VENTA - Eliminar"
+			}
+		]
+	}
+}

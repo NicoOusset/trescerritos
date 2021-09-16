@@ -39,7 +39,7 @@ def crearCliente():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error' , 'mensaje': 'Error al crear cliente: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"cliente creado correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"cliente creado correctamente"})
 
 
 @app.route('/listarClientes', methods=['GET'])
@@ -71,7 +71,7 @@ def listarClientes():
         
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error' , 'mensaje': 'Error al buscar clientes: '+str(e)})
-    return jsonify({'result':'success', 'clientes':clientes, 'cantidadClientes':cantidadClientes})
+    return jsonify({'result':'Success', 'clientes':clientes, 'cantidadClientes':cantidadClientes})
 
 
 @app.route('/buscarClientes', methods=['POST'])
@@ -118,7 +118,7 @@ def buscarClientes():
         
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar clientes: '+str(e)})
-    return jsonify({'result':'success', 'clientes':clientes, 'cantidadClientes':cantidadClientes})
+    return jsonify({'result':'Success', 'clientes':clientes, 'cantidadClientes':cantidadClientes})
 
 
 @app.route('/buscarDatosCliente', methods=['POST'])
@@ -138,20 +138,16 @@ def buscarDatosCliente():
 
         sql = (" SELECT * FROM clientes WHERE Id=%s ")       
         cursor.execute(sql, Id)
-        clientesBusqueda = cursor.fetchall()
+        clientesBusqueda = cursor.fetchone()
         cursor.close()
        
-        cliente=[]
-        for i in clientesBusqueda:
-            elemento = {}
-            for index in range(len(columnasItem)):
-                elemento[columnasItem[index]] = i[index]
-            cliente.append(elemento)      
+        cliente={}
+        for index in range(len(columnasItem)):
+            cliente[columnasItem[index]] = clientesBusqueda[index]   
                      
-        
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar clientes: '+str(e)})
-    return jsonify({'result':'success', 'datosCliente':cliente})
+    return jsonify({'result':'Success', 'datosCliente':cliente})
 
 
 @app.route('/modificarCliente', methods=['POST'])
@@ -181,7 +177,7 @@ def modificarCliente():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al modificar cliente: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Cliente modificado correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Cliente modificado correctamente"})
 
 
 @app.route('/eliminarCliente', methods=['POST'])
@@ -201,7 +197,7 @@ def eliminarCliente():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al eliminar cliente: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Cliente elimininado correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Cliente elimininado correctamente"})
     
 
 #------------------------  BROKERS --------------------------
@@ -229,7 +225,7 @@ def crearBroker():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al crear Broker: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Broker creado correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Broker creado correctamente"})
 
 
 @app.route('/listarBrokers', methods=['GET'])
@@ -261,7 +257,7 @@ def listarBrokers():
         
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar brokers: '+str(e)})
-    return jsonify({'result':'success', 'brokers':brokers, 'cantidadBrokers':cantidadBrokers})
+    return jsonify({'result':'Success', 'brokers':brokers, 'cantidadBrokers':cantidadBrokers})
 
 
 @app.route('/buscarBrokers', methods=['POST'])
@@ -307,7 +303,7 @@ def buscarBrokers():
         
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar brokers: '+str(e)})
-    return jsonify({'result':'success', 'brokers':brokers, 'cantidadBrokers':cantidadBrokers})
+    return jsonify({'result':'Success', 'brokers':brokers, 'cantidadBrokers':cantidadBrokers})
 
 
 @app.route('/buscarDatosBroker', methods=['POST'])
@@ -327,20 +323,16 @@ def buscarDatosBroker():
 
         sql = (" SELECT * FROM brokers WHERE Id=%s ")       
         cursor.execute(sql, Id)
-        brokerBusqueda = cursor.fetchall()
+        brokerBusqueda = cursor.fetchone()
         cursor.close()
        
-        broker=[]
-        for i in brokerBusqueda:
-            elemento = {}
-            for index in range(len(columnasItem)):
-                elemento[columnasItem[index]] = i[index]
-            broker.append(elemento)      
-                     
+        broker={}       
+        for index in range(len(columnasItem)):
+            broker[columnasItem[index]] = brokerBusqueda[index]
         
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar broker: '+str(e)})
-    return jsonify({'result':'success', 'datosBroker':broker})
+    return jsonify({'result':'Success', 'datosBroker':broker})
 
 
 @app.route('/modificarBroker', methods=['POST'])
@@ -368,7 +360,7 @@ def modificarBroker():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al modificar broker: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Broker modificado correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Broker modificado correctamente"})
        
 
 @app.route('/eliminarBroker', methods=['POST'])
@@ -388,7 +380,7 @@ def eliminarBroker():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al eliminar broker: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Broker elimininado correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Broker elimininado correctamente"})
        
   
 #------------------------  CAMION --------------------------
@@ -417,7 +409,7 @@ def crearCamion():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al crear Camion: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Camion creado correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Camion creado correctamente"})
 
 
 @app.route('/listarCamiones', methods=['GET'])
@@ -449,7 +441,7 @@ def listarCamiones():
         
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar camiones: '+str(e)})
-    return jsonify({'result':'success', 'camiones':camiones, 'cantidadCamiones':cantidadCamiones})
+    return jsonify({'result':'Success', 'camiones':camiones, 'cantidadCamiones':cantidadCamiones})
 
 
 @app.route('/buscarCamiones', methods=['POST'])
@@ -495,7 +487,7 @@ def buscarCamiones():
         
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar camiones: '+str(e)})
-    return jsonify({'result':'success', 'camiones':camiones, 'cantidadCamiones':cantidadCamiones})
+    return jsonify({'result':'Success', 'camiones':camiones, 'cantidadCamiones':cantidadCamiones})
 
 
 @app.route('/buscarDatosCamion', methods=['POST'])
@@ -514,19 +506,17 @@ def buscarDatosCamion():
 
         sql = (" SELECT * FROM camiones WHERE Id=%s ")       
         cursor.execute(sql, Id)
-        camionBusqueda = cursor.fetchall()
+        camionBusqueda = cursor.fetchone()
         cursor.close()
        
-        camion=[]
-        for i in camionBusqueda:
-            elemento = {}
-            for index in range(len(columnasItem)):
-                elemento[columnasItem[index]] = i[index]
-            camion.append(elemento)    
+        camion={}         
+        for index in range(len(columnasItem)):
+            camion[columnasItem[index]] = camionBusqueda[index]
+               
                              
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar camion: '+str(e)})
-    return jsonify({'result':'success', 'datosCamion':camion})
+    return jsonify({'result':'Success', 'datosCamion':camion})
 
 
 @app.route('/modificarCamion', methods=['POST'])
@@ -555,7 +545,7 @@ def modificarCamion():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al modificar camion: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Camion modificado correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Camion modificado correctamente"})
        
 
 @app.route('/eliminarCamion', methods=['POST'])
@@ -573,7 +563,7 @@ def eliminarCamion():
         
     except Exception as e:        
         return jsonify({'result':'Error', 'mensaje': 'Error al eliminar camion: '+str(e)})    
-    return jsonify({'result':'success', 'mensaje':"Camion elimininado correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Camion elimininado correctamente"})
    
 
 #---------------------  IMPORTACIONES ----------------------
@@ -634,7 +624,7 @@ def cargarCompraImportaciones():
     except Exception as e:        
         return jsonify({'result':'Error', 'mensaje': 'Error al cargar Compra Importacion: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Compra Importacion cargada correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Compra Importacion cargada correctamente"})
 
 
 @app.route('/listarComprasImportaciones', methods=['GET'])
@@ -667,7 +657,96 @@ def listarComprasImportaciones():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Compras Importaciones: '+str(e)})
 
-    return jsonify({'result':'success', 'ComprasImportaciones':ComprasImportaciones, 'cantidadComprasImportaciones':cantidadComprasImportaciones})
+    return jsonify({'result':'Success', 'ComprasImportaciones':ComprasImportaciones, 'cantidadComprasImportaciones':cantidadComprasImportaciones})
+
+
+@app.route('/buscarComprasImportaciones', methods=['POST'])
+def buscarComprasImportaciones():
+
+    Nombre_empresa= "%" +request.json['Nombre_empresa'] +"%"
+    Nro_factura= "%" +request.json['Nro_factura'] +"%"   
+    Cliente= "%" +str(request.json['Cliente']) +"%"
+    Nro_transaccion= "%" +request.json['Nro_transaccion'] +"%"       
+    Broker= "%" +str(request.json['Broker'])+"%"   
+    Producto= "%" +request.json['Producto']  +"%"  
+    Camion= "%" +str(request.json['Camion'])+"%"
+    
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM importaciones_compra FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM importaciones_compra "+
+               " WHERE Nombre_empresa like %s and Nro_factura like %s and Cliente like %s "+
+               " and Nro_transaccion like %s and Broker like %s and Producto like %s and Camion like %s"+
+               " ORDER BY Id DESC ")
+        tupla=(Nombre_empresa, Nro_factura, Cliente, Nro_transaccion, Broker, Producto, Camion)
+        cursor.execute(sql, tupla)
+        comprasImportacionesBusqueda = cursor.fetchall()
+        cursor.close()
+
+        cantidadComprasImportaciones=0
+        ComprasImportaciones=[]
+        for i in comprasImportacionesBusqueda:
+            elemento = {}
+            for index in range(len(columnasItem)):
+                elemento[columnasItem[index]] = i[index]
+            ComprasImportaciones.append(elemento)      
+            cantidadComprasImportaciones=cantidadComprasImportaciones+1         
+           
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Compras Importaciones: '+str(e)})
+
+    return jsonify({'result':'Success', 'ComprasImportaciones':ComprasImportaciones, 'cantidadComprasImportaciones':cantidadComprasImportaciones})
+
+
+@app.route('/buscarUnaCompraImportaciones', methods=['POST'])
+def buscarUnaCompraImportaciones():
+    
+    Id=request.json['Id']
+    try:
+
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM importaciones_compra FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM importaciones_compra WHERE Id=%s ")       
+        cursor.execute(sql, Id)
+        compraImportacionesBusqueda = cursor.fetchone()
+        cursor.close()
+       
+        compraImportaciones={}
+        for index in range(len(columnasItem)):
+            compraImportaciones[columnasItem[index]] = compraImportacionesBusqueda[index]   
+                     
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Compra Importaciones: '+str(e)})
+    return jsonify({'result':'Success', 'datosCompraImportaciones':compraImportaciones})
+
+
+@app.route('/eliminarCompraImportaciones', methods=['POST'])
+def eliminarCompraImportaciones():
+    
+    Id=request.json['Id']
+    try:
+        cursor=db.cursor()        
+        sql = (" DELETE FROM importaciones_compra WHERE Id=%s ")       
+        cursor.execute(sql, Id)        
+        cursor.close()     
+
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al eliminar Compra Importaciones: '+str(e)})
+    return jsonify({'result':'Success', 'mensaje':'Compra Importaciones elimanada correctamente'})
 
 
 #------------------------  VENTA --------------------------
@@ -725,7 +804,7 @@ def cargarVentaImportaciones():
     except Exception as e:        
         return jsonify({'result':'Error', 'mensaje': 'Error al cargar Venta Importacion: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Venta Importacion cargada correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Venta Importacion cargada correctamente"})
 
 
 @app.route('/listarVentasImportaciones', methods=['GET'])
@@ -758,8 +837,95 @@ def listarVentasImportaciones():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Ventas Importaciones: '+str(e)})
 
-    return jsonify({'result':'success', 'VentasImportaciones':VentasImportaciones, 'cantidadVentasImportaciones':cantidadVentasImportaciones})
+    return jsonify({'result':'Success', 'VentasImportaciones':VentasImportaciones, 'cantidadVentasImportaciones':cantidadVentasImportaciones})
 
+
+@app.route('/buscarVentasImportaciones', methods=['POST'])
+def buscarVentasImportaciones(): 
+
+    Establecimiento= "%" +request.json['Establecimiento'] +"%"
+    Nro_factura= "%" +request.json['Nro_factura'] +"%"   
+    Cliente= "%" +str(request.json['Cliente']) +"%"
+    Nro_transaccion= "%" +request.json['Nro_transaccion'] +"%"     
+    Producto= "%" +request.json['Producto']  +"%"  
+    Camion= "%" +str(request.json['Camion'])+"%"
+    
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM importaciones_venta FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM importaciones_venta "+
+               " WHERE Establecimiento like %s and Nro_factura like %s and Cliente like %s "+
+               " and Nro_transaccion like %s and Producto like %s and Camion like %s"+
+               " ORDER BY Id DESC ")
+        tupla=(Establecimiento, Nro_factura, Cliente, Nro_transaccion, Producto, Camion)
+        cursor.execute(sql, tupla)
+        ventasImportacionesBusqueda = cursor.fetchall()
+        cursor.close()
+
+        cantidadVentasImportaciones=0
+        VentasImportaciones=[]
+        for i in ventasImportacionesBusqueda:
+            elemento = {}
+            for index in range(len(columnasItem)):
+                elemento[columnasItem[index]] = i[index]
+            VentasImportaciones.append(elemento)      
+            cantidadVentasImportaciones=cantidadVentasImportaciones+1         
+           
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Ventas Importaciones: '+str(e)})
+
+    return jsonify({'result':'Success', 'VentasImportaciones':VentasImportaciones, 'cantidadVentasImportaciones':cantidadVentasImportaciones})
+
+
+@app.route('/buscarUnaVentaImportaciones', methods=['POST'])
+def buscarUnaVentaImportaciones():
+    
+    Id=request.json['Id']
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM importaciones_venta FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM importaciones_venta WHERE Id=%s ")       
+        cursor.execute(sql, Id)
+        ventaImportacionesBusqueda = cursor.fetchone()
+        cursor.close()
+       
+        ventaImportaciones={}
+        for index in range(len(columnasItem)):
+            ventaImportaciones[columnasItem[index]] = ventaImportacionesBusqueda[index]   
+                     
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Venta Importaciones: '+str(e)})
+    return jsonify({'result':'Success', 'datosVentaImportaciones':ventaImportaciones})
+
+
+@app.route('/eliminarVentaImportaciones', methods=['POST'])
+def eliminarVentaImportaciones():
+    
+    Id=request.json['Id']
+    try:
+        cursor=db.cursor()        
+        sql = (" DELETE FROM importaciones_venta WHERE Id=%s ")       
+        cursor.execute(sql, Id)        
+        cursor.close()     
+
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al eliminar Venta Importaciones: '+str(e)})
+    return jsonify({'result':'Success', 'mensaje':'Venta Importaciones elimanada correctamente'})
+    
 
 #---------------------  MERCADO INTERNO -------------------------
 
@@ -819,7 +985,7 @@ def cargarCompraMercadoInterno():
     except Exception as e:        
         return jsonify({'result':'Error', 'mensaje': 'Error al cargar Compra Mercado Interno: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Compra Mercado Interno cargada correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Compra Mercado Interno cargada correctamente"})
 
 
 @app.route('/listarComprasMercadoInterno', methods=['GET'])
@@ -852,8 +1018,94 @@ def listarComprasMercadoInterno():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Compras Mercado Interno: '+str(e)})
 
-    return jsonify({'result':'success', 'ComprasMercadoInterno':ComprasMercadoInterno, 'cantidadComprasMercadoInterno':cantidadComprasMercadoInterno})
+    return jsonify({'result':'Success', 'ComprasMercadoInterno':ComprasMercadoInterno, 'cantidadComprasMercadoInterno':cantidadComprasMercadoInterno})
 
+
+@app.route('/buscarComprasMercadoInterno', methods=['POST'])
+def buscarComprasMercadoInterno():
+
+    Nombre_empresa= "%" +request.json['Nombre_empresa'] +"%"
+    Nro_factura= "%" +request.json['Nro_factura'] +"%"   
+    Cliente= "%" +str(request.json['Cliente']) +"%"
+    Nro_transaccion= "%" +request.json['Nro_transaccion'] +"%"     
+    Producto= "%" +request.json['Producto']  +"%"  
+    Camion= "%" +str(request.json['Camion'])+"%"   
+     
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM mercado_interno_compra FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+        
+        sql = (" SELECT * FROM mercado_interno_compra "+
+               " WHERE Nombre_empresa like %s and Nro_factura like %s and Cliente like %s "+
+               " and Nro_transaccion like %s and Producto like %s and Camion like %s"+
+               " ORDER BY Id DESC ")
+        tupla=(Nombre_empresa, Nro_factura, Cliente, Nro_transaccion, Producto, Camion)
+        cursor.execute(sql, tupla)
+        comprasMercadoInternoBusqueda = cursor.fetchall()
+        cursor.close()
+
+        cantidadComprasMercadoInterno=0
+        ComprasMercadoInterno=[]
+        for i in comprasMercadoInternoBusqueda:
+            elemento = {}
+            for index in range(len(columnasItem)):
+                elemento[columnasItem[index]] = i[index]
+            ComprasMercadoInterno.append(elemento)      
+            cantidadComprasMercadoInterno=cantidadComprasMercadoInterno+1         
+           
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Compras Mercado Interno: '+str(e)})
+
+    return jsonify({'result':'Success', 'ComprasMercadoInterno':ComprasMercadoInterno, 'cantidadComprasMercadoInterno':cantidadComprasMercadoInterno})
+
+
+@app.route('/buscarUnaCompraMercadoInterno', methods=['POST'])
+def buscarUnaCompraMercadoInterno():
+    
+    Id=request.json['Id']
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM mercado_interno_compra FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM mercado_interno_compra WHERE Id=%s ")       
+        cursor.execute(sql, Id)
+        compraMercadoInternoBusqueda = cursor.fetchone()
+        cursor.close()
+       
+        compraMercadoInterno={}
+        for index in range(len(columnasItem)):
+            compraMercadoInterno[columnasItem[index]] = compraMercadoInternoBusqueda[index]   
+                     
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Compra Mercado Interno: '+str(e)})
+    return jsonify({'result':'Success', 'compraMercadoInterno':compraMercadoInterno})
+
+@app.route('/eliminarCompraMercadoInterno', methods=['POST'])
+def eliminarCompraMercadoInterno():
+    
+    Id=request.json['Id']
+    try:
+        cursor=db.cursor()        
+        sql = (" DELETE FROM mercado_interno_compra WHERE Id=%s ")       
+        cursor.execute(sql, Id)        
+        cursor.close()     
+
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al eliminar Compra Mercado Interno: '+str(e)})
+    return jsonify({'result':'Success', 'mensaje':'Compra Mercado Interno elimanada correctamente'})
+   
 
 #------------------------  VENTA --------------------------
 	
@@ -892,7 +1144,7 @@ def cargarVentaMercadoInterno():
     except Exception as e:        
         return jsonify({'result':'Error', 'mensaje': 'Error al cargar Venta Mercado Interno: '+str(e)})
     
-    return jsonify({'result':'success', 'mensaje':"Venta Mercado Interno cargada correctamente"})
+    return jsonify({'result':'Success', 'mensaje':"Venta Mercado Interno cargada correctamente"})
 
 
 @app.route('/listarVentasMercadoInterno', methods=['GET'])
@@ -925,7 +1177,95 @@ def listarVentasMercadoInterno():
     except Exception as e:        
         return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Ventas Mercado Interno: '+str(e)})
 
-    return jsonify({'result':'success', 'VentasMercadoInterno':VentasMercadoInterno, 'cantidadVentasMercadoInterno':cantidadVentasMercadoInterno})
+    return jsonify({'result':'Success', 'VentasMercadoInterno':VentasMercadoInterno, 'cantidadVentasMercadoInterno':cantidadVentasMercadoInterno})
+
+
+@app.route('/buscarVentasMercadoInterno', methods=['POST'])
+def buscarVentasMercadoInterno():
+
+    Establecimiento= "%" +request.json['Establecimiento'] +"%"
+    Nro_factura= "%" +request.json['Nro_factura'] +"%"   
+    Cliente= "%" +str(request.json['Cliente']) +"%"
+    Nro_transaccion= "%" +request.json['Nro_transaccion'] +"%"     
+    Producto= "%" +request.json['Producto']  +"%"  
+    Camion= "%" +str(request.json['Camion'])+"%"   
+     
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM mercado_interno_venta FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+        
+        sql = (" SELECT * FROM mercado_interno_venta "+
+               " WHERE Establecimiento like %s and Nro_factura like %s and Cliente like %s "+
+               " and Nro_transaccion like %s and Producto like %s and Camion like %s"+
+               " ORDER BY Id DESC ")
+        tupla=(Establecimiento, Nro_factura, Cliente, Nro_transaccion, Producto, Camion)
+        cursor.execute(sql, tupla)
+        ventasMercadoInternoBusqueda = cursor.fetchall()
+        cursor.close()
+
+        cantidadVentasMercadoInterno=0
+        VentasMercadoInterno=[]
+        for i in ventasMercadoInternoBusqueda:
+            elemento = {}
+            for index in range(len(columnasItem)):
+                elemento[columnasItem[index]] = i[index]
+            VentasMercadoInterno.append(elemento)      
+            cantidadVentasMercadoInterno=cantidadVentasMercadoInterno+1         
+           
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Ventas Mercado Interno: '+str(e)})
+
+    return jsonify({'result':'Success', 'VentasMercadoInterno':VentasMercadoInterno, 'cantidadVentasMercadoInterno':cantidadVentasMercadoInterno})
+
+
+@app.route('/buscarUnaVentaMercadoInterno', methods=['POST'])
+def buscarUnaVentaMercadoInterno():
+    
+    Id=request.json['Id']
+    try:
+        cursor=db.cursor()
+        sql0 = "SHOW COLUMNS FROM mercado_interno_venta FROM trescerritos;"
+        cursor.execute(sql0)
+        columnas = cursor.fetchall()        
+        columnasItem = []
+        for c in columnas:
+            nombreColumna = c[0]
+            columnasItem.append(nombreColumna)
+
+        sql = (" SELECT * FROM mercado_interno_venta WHERE Id=%s ")       
+        cursor.execute(sql, Id)
+        ventaMercadoInternoBusqueda = cursor.fetchone()
+        cursor.close()
+       
+        VentaMercadoInterno={}
+        for index in range(len(columnasItem)):
+            VentaMercadoInterno[columnasItem[index]] = ventaMercadoInternoBusqueda[index]   
+                     
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al buscar Venta Mercado Interno: '+str(e)})
+    return jsonify({'result':'Success', 'VentaMercadoInterno':VentaMercadoInterno})
+
+
+@app.route('/eliminarVentaMercadoInterno', methods=['POST'])
+def eliminarVentaMercadoInterno():
+    
+    Id=request.json['Id']
+    try:
+        cursor=db.cursor()        
+        sql = (" DELETE FROM mercado_interno_venta WHERE Id=%s ")       
+        cursor.execute(sql, Id)        
+        cursor.close()     
+
+    except Exception as e:        
+        return jsonify({'result':'Error' , 'mensaje': 'Error al eliminar Venta Mercado Interno: '+str(e)})
+    return jsonify({'result':'Success', 'mensaje':'Venta Mercado Interno elimanada correctamente'})
+   
 
 
 if __name__ == "__main__":
